@@ -5,9 +5,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from feature_engineering import prepare_features
-from preprocess import load_dataset
-from utils import DATA_DIR, SUBMISSIONS_DIR, load_bundle, save_submission
+from src.feature_engineering import prepare_features
+from src.preprocess import load_dataset
+from src.utils import DATA_DIR, SUBMISSIONS_DIR, load_bundle, save_submission
 
 
 def parse_args() -> argparse.Namespace:

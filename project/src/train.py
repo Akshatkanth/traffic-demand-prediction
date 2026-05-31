@@ -14,9 +14,9 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import r2_score
 from sklearn.preprocessing import OrdinalEncoder
 
-from feature_engineering import CATEGORICAL_FEATURES, NUMERIC_FEATURES
-from preprocess import build_train_test_frames, load_dataset
-from utils import DATA_DIR, MODELS_DIR, SUBMISSIONS_DIR, competition_score, ensure_directories, save_bundle, save_submission, set_seed, to_json
+from src.feature_engineering import CATEGORICAL_FEATURES, NUMERIC_FEATURES
+from src.preprocess import build_train_test_frames, load_dataset
+from src.utils import DATA_DIR, MODELS_DIR, SUBMISSIONS_DIR, competition_score, ensure_directories, save_bundle, save_submission, set_seed, to_json
 
 try:
     from catboost import CatBoostRegressor, Pool
@@ -310,8 +310,6 @@ def train_catboost(train_features: pd.DataFrame, target: pd.Series, test_feature
         "model": fitted_models[-1],
         "categorical_columns": categorical_columns,
     }
-def __r2_score(y_true: pd.Series, y_pred: np.ndarray) -> float:
-
 
 def train_model(model_name: str, train_path: Path, test_path: Path) -> dict[str, Any]:
     train_df = load_dataset(train_path)

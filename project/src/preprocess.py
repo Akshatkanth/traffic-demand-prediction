@@ -5,8 +5,8 @@ from typing import Any
 
 import pandas as pd
 
-from feature_engineering import get_model_feature_columns, prepare_features
-from utils import PROJECT_ROOT
+from src.feature_engineering import get_model_feature_columns, prepare_features
+from src.utils import PROJECT_ROOT
 
 
 def resolve_data_path(path: str | Path) -> Path:
